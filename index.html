@@ -182,7 +182,17 @@
             let somme = listNote.reduce((total, note) => parseInt(total) + parseInt(note), 0);
             let moyenne = somme / listNote.length;
             rendu.innerHTML = "";
-            rendu.innerHTML = "<span> " + Math.round(moyenne) + " </span>";
+            let avis = "";
+            if (moyenne >= 16){
+                avis = " Excellent";
+            }else if(moyenne >= 12){
+                avis = " Bien";
+            }else if(moyenne >= 10){
+                avis = " Passable";
+            }else if(moyenne < 10){
+                avis = " Insuffisant";
+            }
+            rendu.innerHTML = "<span> " + Math.round(moyenne) + avis + " </span>";
         })
     </script>
 </body>
